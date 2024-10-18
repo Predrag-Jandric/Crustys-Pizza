@@ -1,12 +1,16 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import SearchOrder from "../features/order/SearchOrder";
 
 function Header() {
-    return (
-        <header>
-            <Link to="/" >Company name</ Link>
-            <p>Peter</p>
-        </header>
-    )
+  return (
+    <header>
+      <Link to="/">Company name</Link>
+
+      <SearchOrder />
+
+      <p>Peter</p>
+    </header>
+  );
 }
 
-export default Header
+export default Header;
