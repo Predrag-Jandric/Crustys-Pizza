@@ -4,14 +4,14 @@ import Username from "../features/user/Username";
 
 function Header() {
   return (
-    <header className="bg-yellow-500 uppercase">
+    <header className="bg-yellow-500 flex items-center justify-between uppercase px-4 py-3 border-b border-stone-200 sm:px-6">
       <Link className="tracking-widest" to="/">Company name</Link>
 
       <SearchOrder />
 
       <Username />
     </header>
-  );
+  )
 }
 
-export default Header;
+export default Header
