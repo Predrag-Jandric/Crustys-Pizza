@@ -49,7 +49,7 @@ function CreateOrder() {
           <div className="grow">
             <input className="input w-full" type="tel" name="phone" required />
             {formErrors?.phone && (
-              <p className="mt-2 rounded-md bg-red-100 p-2 text-xs text-red-700">
+              <p className="mt-2 rounded-md bg-alert1 p-2 text-xs text-alert3">
                 {formErrors.phone}
               </p>
             )}

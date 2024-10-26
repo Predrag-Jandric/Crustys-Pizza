@@ -8,8 +8,8 @@ import { useSelector } from "react-redux";
 function AppLayout() {
   const navigation = useNavigation();
   const isLoading = navigation.state === "loading";
-  const user = useSelector((state) => state.user.username)
-  
+  const user = useSelector((state) => state.user.username);
+
   return (
     <div className="grid h-screen grid-rows-[auto_1fr_auto]">
       {isLoading && <Loader />}
@@ -21,7 +21,7 @@ function AppLayout() {
         <Outlet />
       </main>
 
-      {user && <CartOverview />} 
+      {user && <CartOverview />}
     </div>
   );
 }

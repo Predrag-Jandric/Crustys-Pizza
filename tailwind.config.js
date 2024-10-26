@@ -8,14 +8,28 @@ export default {
     },
 
     extend: {
+      fontFamily: {
+        logo: "Yellowtail",
+      },
       colors: {
         primary: "#facc15",
+        // gray0: "", // stone 100
         gray1: "#e7e5e4", // stone 200
         gray2: "#d6d3d1", // stone 300
-
+        // gray3: "", // stone 400
+        gray4: "#78716c", // stone 500
+        gray5: "#57534e", // stone 600
+        // gray6: "#", // stone 700
+        gray7: "#292524", // stone 800
+        alert1: "#fee2e2", // red 100
+        alert2: "#f97316", // red 500
+        alert3: "#9a3412", // red 800
       },
       height: {
         screen: "100dvh",
+      },
+      backgroundImage: {
+        'hero': "url('./src/assets/pizza.jpg')", // Path to your image
       },
     },
   },
