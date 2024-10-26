@@ -23,7 +23,7 @@ function CreateOrder() {
   const isSubmitting = navigation.state === "submitting";
   const totalCartPrice = useSelector(getTotalCartPrice);
   const formErrors = useActionData();
-  const priorityPrice = withPriority ? totalCartPrice + 0.2 : 0;
+  const priorityPrice = withPriority ? totalCartPrice * 0.2 : 0;
   const totalPrice = totalCartPrice + priorityPrice;
 
   if (!cart.length) return <EmptyCart />;
@@ -86,7 +86,9 @@ function CreateOrder() {
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
 
           <Button type="primary" disabled={isSubmitting}>
-            {isSubmitting ? "Placing order..." : `Order now for ${formatCurrency(totalPrice)}`}
+            {isSubmitting
+              ? "Placing order..."
+              : `Order now for ${formatCurrency(totalPrice)}`}
           </Button>
         </div>
       </Form>
