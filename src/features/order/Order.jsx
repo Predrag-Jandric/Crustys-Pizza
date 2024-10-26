@@ -41,7 +41,7 @@ function Order() {
         </div>
       </div>
 
-      <div className="flex flex-wrap items-center justify-between gap-4 bg-stone-200 px-6 py-5">
+      <div className="flex flex-wrap items-center justify-between gap-4 bg-gray1 px-6 py-5">
         <p className="font-medium">
           {deliveryIn >= 0
             ? `Only ${calcMinutesLeft(estimatedDelivery)} minutes left 😃`
@@ -52,13 +52,13 @@ function Order() {
         </p>
       </div>
 
-      <ul className="divide-y divide-stone-200 border-b border-t">
+      <ul className="divide-y divide-gray1 border-b border-t">
         {cart.map((item) => (
           <OrderItem item={item} key={item.id} />
         ))}
       </ul>
 
-      <div className="space-y-23 bg-stone-200 px-6 py-5">
+      <div className="space-y-23 bg-gray1 px-6 py-5">
         <p className="text-sm font-medium text-stone-600">
           Price pizza: {formatCurrency(orderPrice)}
         </p>

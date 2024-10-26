@@ -9,8 +9,6 @@ function AppLayout() {
   const navigation = useNavigation();
   const isLoading = navigation.state === "loading";
   const user = useSelector((state) => state.user.username)
-
-  console.log(user);
   
   return (
     <div className="grid h-screen grid-rows-[auto_1fr_auto]">
