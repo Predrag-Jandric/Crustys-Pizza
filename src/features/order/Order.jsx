@@ -2,11 +2,7 @@
 
 import { useLoaderData } from "react-router-dom";
 import { getOrder } from "../../services/apiRestaurant";
-import {
-  calcMinutesLeft,
-  formatCurrency,
-  formatDate,
-} from "../../utils/helpers";
+import { formatCurrency } from "../../utils/helpers";
 import OrderItem from "../order/OrderItem";
 
 function Order() {
@@ -19,10 +15,9 @@ function Order() {
     priority,
     priorityPrice,
     orderPrice,
-    estimatedDelivery,
     cart,
   } = order;
-  const deliveryIn = calcMinutesLeft(estimatedDelivery);
+
 
   return (
     <div className="space-y-8 px-4 py-6">
@@ -39,17 +34,6 @@ function Order() {
             {status} order
           </span>
         </div>
-      </div>
-
-      <div className="flex flex-wrap items-center justify-between gap-4 bg-gray1 px-6 py-5">
-        <p className="font-medium">
-          {deliveryIn >= 0
-            ? `Only ${calcMinutesLeft(estimatedDelivery)} minutes left 😃`
-            : "Order should have arrived"}
-        </p>
-        <p className="text-xs text-gray4">
-          (Estimated delivery: {formatDate(estimatedDelivery)})
-        </p>
       </div>
 
       <ul className="divide-y divide-gray1 border-b border-t">

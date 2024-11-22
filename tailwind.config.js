@@ -12,8 +12,9 @@ export default {
         logo: "Yellowtail",
       },
       colors: {
-        primary: "#facc15",
-        // gray0: "", // stone 100
+        primary: "#4dccb7 ",
+        primaryHover: "#dda093 ",
+        // gray0: "", // stone 100 facc15
         gray1: "#e7e5e4", // stone 200
         gray2: "#d6d3d1", // stone 300
         // gray3: "", // stone 400
