@@ -1,25 +1,25 @@
 const Modal = ({ content, onClose, handleClickOutside }) => {
-    return (
-      <section
-        id="modal-overlay"
-        className="!m-0 fixed z-50 inset-0 bg-black bg-opacity-20 flex justify-center items-center"
-        onClick={handleClickOutside}
-      >
-        <article className="bg-white dark:bg-dark-primary p-10 rounded-lg w-[30rem]">
-          <div className="flex justify-between items-center">
-          <h2 className="text-secondary text-2xl mb-4 font-bold dark:text-dark-text">Create New</h2>
-  
-            <button
-              className="bg-white shadow rounded-full w-8 h-8 text-red-500"
-              onClick={onClose}
-            >
-              x
-            </button>
-          </div>
-          {content}
-        </article>
-      </section>
-    );
-  };
-  
-  export default Modal;
+  return (
+    <section
+      id="modal-overlay"
+      className="fixed inset-0 z-50 !m-0 flex items-center justify-center bg-black bg-opacity-20"
+      onClick={handleClickOutside}
+    >
+      <article className="w-[30rem] rounded-lg bg-white p-10">
+        <div className="flex justify-between">
+          <h2 className="text-secondary text-2xl font-bold">Edit Profile</h2>
+
+          <button
+            className="h-8 w-8 rounded-full bg-white text-red-500 shadow"
+            onClick={onClose}
+          >
+            x
+          </button>
+        </div>
+        {content}
+      </article>
+    </section>
+  );
+};
+
+export default Modal;
