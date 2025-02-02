@@ -11,12 +11,12 @@ function AppLayout() {
   const user = useSelector((state) => state.user.username);
 
   return (
-    <div className="grid bg-red-300 h-screen grid-rows-[auto_1fr_auto]">
+    <div className="grid h-screen grid-rows-[auto_1fr_auto] bg-red-300">
       {isLoading && <Loader />}
 
       <Header />
       {/* mx-auto max-w-3xl */}
-      <main className=" mx-auto">
+      <main className="mx-auto">
         {/* <h1>Content</h1> */}
         <Outlet />
       </main>
