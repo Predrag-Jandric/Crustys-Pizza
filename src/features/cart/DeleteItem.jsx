@@ -11,7 +11,7 @@ function handleDelete(){
 
     return (
         <div>
-            <Button onClick={handleDelete} type="small">Delete</Button>
+            <Button onClick={handleDelete} type="primarySmall">Delete</Button>
         </div>
     )
 }

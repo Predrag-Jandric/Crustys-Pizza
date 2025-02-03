@@ -12,6 +12,7 @@ import {
 import useModal from "../utils/useModal";
 import Modal from "../utils/Modal";
 import { toast } from "react-toastify";
+import Button from "./Button";
 
 function Header() {
   const dispatch = useDispatch();
@@ -43,7 +44,8 @@ function Header() {
   };
 
   const handleInputChange = (e) => {
-    const capitalizedValue = e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1);
+    const capitalizedValue =
+      e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1);
     setUsername(capitalizedValue);
   };
 
@@ -115,18 +117,12 @@ function Header() {
                   />
                 ))}
               </div>
-              <button
-                onClick={handleSubmit}
-                className="rounded-lg border-2 border-transparent bg-primary px-4 py-2 text-white"
-              >
+              <Button onClick={handleSubmit} type="primarySmall">
                 Update Profile
-              </button>
-              <button
-                onClick={handleSignOut}
-                className="mt-4 rounded-lg border-2 border-alert2 bg-transparent px-4 py-2 text-black"
-              >
+              </Button>
+              <Button onClick={handleSignOut} type="secondarySmall">
                 Sign me out
-              </button>
+              </Button>
             </div>
           }
           onClose={closeModal}

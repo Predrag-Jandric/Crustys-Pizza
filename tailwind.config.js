@@ -13,7 +13,7 @@ export default {
       },
       colors: {
         primary: "#4dccb7 ",
-        primaryHover: "#dda093 ",
+        primaryHover: "#81DACB ",
         // gray0: "", // stone 100 facc15
         gray1: "#e7e5e4", // stone 200
         gray2: "#d6d3d1", // stone 300
@@ -25,9 +25,6 @@ export default {
         alert1: "#fee2e2", // red 100
         alert2: "#f97316", // red 500
         alert3: "#9a3412", // red 800
-      },
-      height: {
-        screen: "100dvh",
       },
       backgroundImage: {
         'hero': "url('./src/assets/pizza.jpg')", // Path to your image

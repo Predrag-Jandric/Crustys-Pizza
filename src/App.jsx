@@ -2,12 +2,13 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./ui/Home";
 import Menu, { loader as menuLoader } from "./features/menu/Menu";
 import Cart from "./features/cart/Cart";
-import CreateOrder, {action as createOrderAction} from "./features/order/CreateOrder";
-import Order, {loader as orderLoader} from "./features/order/Order";
+import CreateOrder, {
+  action as createOrderAction,
+} from "./features/order/CreateOrder";
+import Order, { loader as orderLoader } from "./features/order/Order";
 import AppLayout from "./ui/AppLayout";
 import Error from "./ui/Error";
 import { ToastContainer } from "react-toastify";
-
 
 const router = createBrowserRouter([
   {
@@ -38,7 +39,6 @@ const router = createBrowserRouter([
         element: <Order />,
         loader: orderLoader,
         errorElement: <Error />,
-
       },
     ],
   },
@@ -47,10 +47,10 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-    <ToastContainer/>
-    <RouterProvider router={router} />;
+      <ToastContainer />
+      <RouterProvider router={router} />
     </>
-  )
+  );
 }
 
 export default App;

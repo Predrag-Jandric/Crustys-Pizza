@@ -18,19 +18,19 @@ function Order() {
 
         <div className="space-x-2">
           {priority && (
-            <span className="rounded-full bg-alert2 px-3 py-1 text-sm font-semibold uppercase tracking-wide text-white">
+            <span className="rounded-md bg-alert2 px-3 py-1 text-sm font-semibold uppercase tracking-wide text-white">
               Priority
             </span>
           )}
-          <span className="rounded-full bg-green-500 px-3 py-1 text-sm font-semibold uppercase tracking-wide text-white">
-            {status} order
+          <span className="rounded-md bg-green-500 px-3 py-1 text-sm font-semibold uppercase tracking-wide text-white">
+            {status}
           </span>
         </div>
       </div>
 
       <ul className="divide-y divide-gray1 border-b border-t">
-        {cart.map((item) => (
-          <OrderItem item={item} key={item.id} />
+        {cart.map((item, index) => (
+          <OrderItem item={item} key={index} />
         ))}
       </ul>
 
@@ -51,6 +51,7 @@ function Order() {
   );
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export async function loader({ params }) {
   const order = await getOrder(params.orderId);
   return order;

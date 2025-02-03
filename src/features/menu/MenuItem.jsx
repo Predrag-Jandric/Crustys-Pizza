@@ -56,7 +56,7 @@ function MenuItem({ pizza }) {
           )}
 
           {!soldOut && !isInCart && (
-            <Button onClick={handleAddToCart} type="small">
+            <Button onClick={handleAddToCart} type="primarySmall">
               Add to cart
             </Button>
           )}
