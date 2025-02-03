@@ -4,9 +4,14 @@ import { useDispatch, useSelector } from "react-redux";
 import logo from "../assets/logo.png";
 import { useEffect, useState } from "react";
 import { imagesPeople } from "../utils/images";
-import { updateUser, updateUserImage } from "../features/user/userSlice";
+import {
+  updateUser,
+  updateUserImage,
+  removeUser,
+} from "../features/user/userSlice";
 import useModal from "../utils/useModal";
 import Modal from "../utils/Modal";
+import { toast } from "react-toastify";
 
 function Header() {
   const dispatch = useDispatch();
@@ -46,6 +51,12 @@ function Header() {
     }
   };
 
+  const handleSignOut = () => {
+    dispatch(removeUser());
+    toast.success("User has been removed successfully!", { autoClose: 1500 });
+    closeModal();
+  };
+
   return (
     <header className="flex items-center justify-between border-b border-gray1 bg-primary px-2 uppercase">
       <Link
@@ -58,26 +69,29 @@ function Header() {
 
       {user && <SearchOrder />}
 
-      <div onClick={handleEditToggle} className="hover:cursor-pointer px-2 hover:bg-green-400 flex items-center gap-2">
+      <div
+        onClick={handleEditToggle}
+        className="flex items-center gap-2 px-2 hover:cursor-pointer hover:bg-green-400"
+      >
         <img className="size-10 rounded-full" src={user.image} alt="" />
-        <p className="hidden p-2 text-sm font-bold md:block">
-          {user.username}
-        </p>
+        <p className="hidden p-2 text-sm font-bold md:block">{user.username}</p>
       </div>
 
       {isOpen && (
         <Modal
           content={
-            <div className="gap-10 flex flex-col">
+            <div className="flex flex-col">
+              <p className="normal-case">Enter new name</p>
               <input
-                className="input mt-10 w-full"
+                className="input w-full"
                 type="text"
                 value={username}
                 onChange={handleInputChange}
                 onKeyDown={handleKeyDown}
                 placeholder="Enter new username"
               />
-              <div className="flex flex-wrap gap-3 mt-0">
+              <p className="normal-case">Select new image</p>
+              <div className="mt-0 flex flex-wrap gap-3">
                 {imagesPeople.map((image, index) => (
                   <img
                     key={index}
@@ -92,9 +106,15 @@ function Header() {
               </div>
               <button
                 onClick={handleSubmit}
-                className="rounded-lg bg-primary px-4 py-2 text-white"
+                className="rounded-lg border-2 border-transparent bg-primary px-4 py-2 text-white"
               >
                 Update Profile
+              </button>
+              <button
+                onClick={handleSignOut}
+                className="mt-4 rounded-lg border-2 border-alert2 bg-transparent px-4 py-2 text-black"
+              >
+                Sign me out
               </button>
             </div>
           }

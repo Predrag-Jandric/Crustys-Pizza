@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
+import defaultImg from "../../assets/unknownPerson.jpg";
 
 const initialState = {
   username: "",
-  image: "",
+  image: `${defaultImg}`,
 };
 
 const userSlice = createSlice({
@@ -19,11 +20,15 @@ const userSlice = createSlice({
     updateUserImage(state, action) {
       state.image = action.payload;
     },
+    removeUser(state){
+      state.username = "";
+      state.image = `${defaultImg}`;
+    }
   },
 });
 
 export const getUsername = (state) => state.user.username;
 export const getUserImage = (state) => state.user.image;
 
-export const { createUser, updateUser, updateUserImage } = userSlice.actions;
+export const { createUser, updateUser, updateUserImage, removeUser } = userSlice.actions;
 export default userSlice.reducer;
