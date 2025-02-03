@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SearchOrder from "../features/order/SearchOrder";
 import { useDispatch, useSelector } from "react-redux";
 import logo from "../assets/logo.png";
@@ -15,6 +15,7 @@ import { toast } from "react-toastify";
 
 function Header() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const user = useSelector((state) => state.user);
   const { isOpen, openModal, closeModal, handleClickOutside } = useModal();
   const [isEditing, setIsEditing] = useState(false);
@@ -42,7 +43,8 @@ function Header() {
   };
 
   const handleInputChange = (e) => {
-    setUsername(e.target.value);
+    const capitalizedValue = e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1);
+    setUsername(capitalizedValue);
   };
 
   const handleKeyDown = (e) => {
@@ -55,6 +57,7 @@ function Header() {
     dispatch(removeUser());
     toast.success("User has been removed successfully!", { autoClose: 1500 });
     closeModal();
+    navigate("/");
   };
 
   return (
@@ -67,15 +70,23 @@ function Header() {
         <span className="font-logo text-2xl">Slice</span>
       </Link>
 
-      {user && <SearchOrder />}
+      {user.username && <SearchOrder />}
 
-      <div
-        onClick={handleEditToggle}
-        className="flex items-center gap-2 px-2 hover:cursor-pointer hover:bg-green-400"
-      >
-        <img className="size-10 rounded-full" src={user.image} alt="" />
-        <p className="hidden p-2 text-sm font-bold md:block">{user.username}</p>
-      </div>
+      {user.username && (
+        <div
+          onClick={handleEditToggle}
+          className="flex items-center gap-2 px-2 hover:cursor-pointer hover:bg-green-400"
+        >
+          <p className="hidden p-2 text-sm font-bold md:block">
+            {user.username}
+          </p>
+          <img
+            className="size-10 rounded-full"
+            src={user.image}
+            alt="missing"
+          />
+        </div>
+      )}
 
       {isOpen && (
         <Modal
