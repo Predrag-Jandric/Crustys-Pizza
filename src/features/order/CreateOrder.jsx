@@ -70,7 +70,7 @@ function CreateOrder() {
 
         <div className="mb-12 flex items-center gap-5">
           <input
-            className="h-6 w-6 accent-primary focus:outline-none focus:ring focus:ring-primary focus:ring-opacity-50 focus:ring-offset-2"
+            className="h-6 w-6 accent-primary focus:outline-none focus:ring focus:ring-primary focus:ring-opacity-50 focus:ring-offset-1"
             type="checkbox"
             name="priority"
             id="priority"

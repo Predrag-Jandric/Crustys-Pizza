@@ -63,7 +63,7 @@ function Header() {
   };
 
   return (
-    <header className="flex items-center justify-between border-b border-gray1 bg-primary px-2 uppercase">
+    <header className="flex h-[10vh] items-center justify-between border-b border-gray1 bg-primary px-2 uppercase">
       <Link
         className="flex items-center gap-3 px-4 py-1 tracking-widest transition-colors hover:bg-yellow-500"
         to="/"
@@ -79,11 +79,11 @@ function Header() {
           onClick={handleEditToggle}
           className="flex items-center gap-2 px-2 hover:cursor-pointer hover:bg-green-400"
         >
-          <p className="hidden p-2 text-sm font-bold md:block">
+          <p className="hidden p-2 text-lg  md:block">
             {user.username}
           </p>
           <img
-            className="size-10 rounded-full"
+            className="size-12 rounded-full"
             src={user.image}
             alt="missing"
           />

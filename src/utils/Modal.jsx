@@ -7,7 +7,7 @@ const Modal = ({ content, onClose, handleClickOutside }) => {
     >
       <article className="w-[30rem] rounded-lg bg-white p-10">
         <div className="flex justify-between">
-          <h2 className="text-secondary text-2xl font-bold">Edit Profile</h2>
+          <h2 className="text-red-600 text-2xl font-bold">Edit Profile</h2>
 
           <button
             className="h-8 w-8 rounded-full bg-white text-red-500 shadow"

@@ -14,6 +14,9 @@ export default {
       colors: {
         primary: "#4dccb7 ",
         primaryHover: "#81DACB ",
+
+        secondary: "transparent",
+        secondaryHover: "#e0e0e0",
         // gray0: "", // stone 100 facc15
         gray1: "#e7e5e4", // stone 200
         gray2: "#d6d3d1", // stone 300

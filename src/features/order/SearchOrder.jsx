@@ -16,7 +16,7 @@ function SearchOrder() {
   return (
     <form onSubmit={handleSubmit}>
       <input
-        className="w-28 rounded-full bg-yellow-100 px-4 py-2 text-sm placeholder:text-gray4 transition-all sm:w-64 sm:focus:w-72 focus:outline-none focus:ring focus:ring-primary focus:ring-opacity-50"
+        className="w-28 rounded-md px-4 py-2 text-sm placeholder:text-gray4 transition-all sm:w-64 sm:focus:w-72 focus:outline-none focus:ring"
         placeholder="Search order #"
         value={query}
         onChange={(e) => setQuery(e.target.value.toUpperCase())}
