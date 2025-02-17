@@ -9,7 +9,7 @@ function Order() {
   const order = useLoaderData();
 
   // Everyone can search for all orders, so for privacy reasons we're gonna gonna exclude names or address, these are only for the restaurant staff
-  const { id, status, priority, priorityPrice, orderPrice, cart } = order;
+  const { id, priority, priorityPrice, orderPrice, cart } = order;
 
   return (
     <div className="space-y-8 px-4 py-6">
@@ -22,13 +22,10 @@ function Order() {
               Priority
             </span>
           )}
-          <span className="rounded-md bg-green-500 px-3 py-1 text-sm font-semibold uppercase tracking-wide text-white">
-            {status}
-          </span>
         </div>
       </div>
 
-      <ul className="divide-y divide-gray1 border-b border-t">
+      <ul className="divide-y divide-gray2 border-b border-t">
         {cart.map((item, index) => (
           <OrderItem item={item} key={index} />
         ))}

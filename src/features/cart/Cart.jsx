@@ -18,12 +18,14 @@ function Cart() {
   if (!cart.length) return <EmptyCart />;
 
   return (
-    <div className="px-4 py-3 md:w-[30rem]">
-      <LinkButton to={"/menu"}>&larr; Back to menu</LinkButton>
+    <div className="mx-auto max-w-[40rem] px-4 py-10 pb-24">
+      <LinkButton to={"/menu"}>
+        <Button type="secondarySmall">&larr; Back to menu</Button>
+      </LinkButton>
 
       <h2 className="mt-7 text-xl font-semibold">Your cart, {username}</h2>
 
-      <ul className="mt-3 divide-y divide-gray1 border-b">
+      <ul className="mt-3">
         {cart.map((item, index) => (
           <CartItem key={index} item={item} />
         ))}

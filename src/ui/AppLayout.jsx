@@ -11,7 +11,7 @@ function AppLayout() {
   const user = useSelector((state) => state.user.username);
 
   return (
-    <div className="grid grid-rows-[auto_1fr_auto]">
+    <div className="">
       {isLoading && <Loader />}
 
       <Header />

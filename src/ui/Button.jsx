@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Button({ children, disabled, to, type, onClick }) {
   const base =
-    "inline-block rounded-md text-sm font-semibold uppercase tracking-wide text-stone-800 transition-colors disabled:cursor-not-allowed border-2";
+    "inline-block rounded-full text-sm font-semibold uppercase tracking-wide text-stone-800 transition-colors disabled:cursor-not-allowed border-2";
 
   const styles = {
     primary:
@@ -14,7 +14,8 @@ function Button({ children, disabled, to, type, onClick }) {
     secondarySmall:
       `${base} border-secondaryHover bg-secondary hover:bg-secondaryHover px-4 py-2 sm:px-5 md:py-2.5 text-xs`,
     round:
-      `${base} border-transparent bg-primary hover:bg-primaryHover px-2.5 py-1 sm:px-3.5 md:py-2 text-sm`,
+      `${base} border-transparent bg-primary hover:bg-primaryHover
+       md:px-3.5 md:py-2 px-3 py-1.5 text-sm`,
   };
 
   if (to)

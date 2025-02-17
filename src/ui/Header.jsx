@@ -33,9 +33,9 @@ function Header() {
     openModal();
   };
 
-  const handleImageSelect = (image) => {
-    setSelectedImage(image);
-  };
+  // const handleImageSelect = (image) => {
+  //   setSelectedImage(image);
+  // };
 
   const handleSubmit = () => {
     dispatch(updateUser(username));
@@ -43,17 +43,17 @@ function Header() {
     closeModal();
   };
 
-  const handleInputChange = (e) => {
-    const capitalizedValue =
-      e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1);
-    setUsername(capitalizedValue);
-  };
+  // const handleInputChange = (e) => {
+  //   const capitalizedValue =
+  //     e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1);
+  //   setUsername(capitalizedValue);
+  // };
 
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter") {
-      handleSubmit();
-    }
-  };
+  // const handleKeyDown = (e) => {
+  //   if (e.key === "Enter") {
+  //     handleSubmit();
+  //   }
+  // };
 
   const handleSignOut = () => {
     dispatch(removeUser());
@@ -65,11 +65,10 @@ function Header() {
   return (
     <header className="flex h-[10vh] items-center justify-between border-b border-gray1 bg-primary px-2 uppercase">
       <Link
-        className="flex items-center gap-3 px-4 py-1 tracking-widest transition-colors hover:bg-yellow-500"
+        className="flex items-center gap-3 px-4 py-1 font-logo text-2xl tracking-widest transition-colors hover:bg-yellow-500"
         to="/"
       >
-        <img className="h-14 w-14" src={logo} alt="" />
-        <span className="font-logo text-2xl">Slice</span>
+        Crusty&apos;s
       </Link>
 
       {user.username && <SearchOrder />}
@@ -79,9 +78,7 @@ function Header() {
           onClick={handleEditToggle}
           className="flex items-center gap-2 px-2 hover:cursor-pointer hover:bg-green-400"
         >
-          <p className="hidden p-2 text-lg  md:block">
-            {user.username}
-          </p>
+          <p className="hidden p-2 text-lg md:block">{user.username}</p>
           <img
             className="size-12 rounded-full"
             src={user.image}
@@ -94,29 +91,6 @@ function Header() {
         <Modal
           content={
             <div className="flex flex-col">
-              <p className="normal-case">Enter new name</p>
-              <input
-                className="input w-full"
-                type="text"
-                value={username}
-                onChange={handleInputChange}
-                onKeyDown={handleKeyDown}
-                placeholder="Enter new username"
-              />
-              <p className="normal-case">Select new image</p>
-              <div className="mt-0 flex flex-wrap gap-3">
-                {imagesPeople.map((image, index) => (
-                  <img
-                    key={index}
-                    src={image}
-                    alt={`image-${index}`}
-                    className={`!m-0 h-[4.3rem] w-[4.3rem] cursor-pointer rounded-full object-cover ${
-                      selectedImage === image ? "ring-[3px] ring-primary" : ""
-                    }`}
-                    onClick={() => handleImageSelect(image)}
-                  />
-                ))}
-              </div>
               <Button onClick={handleSubmit} type="primarySmall">
                 Update Profile
               </Button>

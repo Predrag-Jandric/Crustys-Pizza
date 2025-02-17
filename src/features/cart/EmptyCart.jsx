@@ -1,13 +1,16 @@
+import Button from "../../ui/Button";
 import LinkButton from "../../ui/LinkButton";
 
 function EmptyCart() {
   return (
-    <div className="px-4 py-3">
-      <LinkButton to={"/menu"}>&larr; Back to menu</LinkButton>
-
-      <p className="mt-7 font-semibold">
-        Your cart is still empty. Start adding some pizzas :)
+    <div className="px-4 py-6 flex flex-col gap-6 items-center">
+      <p className="mt-7 text-lg font-semibold text-center">
+        Your cart is still empty. Start adding some pizzas.
       </p>
+
+      <LinkButton to={"/menu"}>
+        <Button type="primarySmall">&larr; Back to menu</Button>
+      </LinkButton>
     </div>
   );
 }

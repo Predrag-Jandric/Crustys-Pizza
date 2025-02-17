@@ -16,10 +16,10 @@ export default {
         primaryHover: "#81DACB ",
 
         secondary: "transparent",
-        secondaryHover: "#e0e0e0",
+        secondaryHover: "#CCCCCC",
         // gray0: "", // stone 100 facc15
         gray1: "#e7e5e4", // stone 200
-        gray2: "#d6d3d1", // stone 300
+        gray2: "#C5C1BE", // stone 300
         // gray3: "", // stone 400
         gray4: "#78716c", // stone 500
         gray5: "#57534e", // stone 600
