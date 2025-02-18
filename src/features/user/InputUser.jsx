@@ -7,20 +7,20 @@ import { useNavigate } from "react-router-dom";
 function InputUser() {
   const [username, setUsername] = useState("");
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
 
     if (!username) return;
     dispatch(createUser(username));
-    navigate('/menu')
+    navigate("/menu");
   }
 
   return (
     <form onSubmit={handleSubmit}>
-      <p className="mb-4 text-sm text-gray5 md:text-base">
-        👋 Welcome! Please start by telling us your name:
+      <p className="mb-4 text-lg text-white ">
+        Please start by telling us your name:
       </p>
 
       <input
@@ -28,7 +28,11 @@ function InputUser() {
         type="text"
         placeholder="Your full name"
         value={username}
-        onChange={(e) => setUsername(e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1))}
+        onChange={(e) =>
+          setUsername(
+            e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1),
+          )
+        }
       />
 
       {username !== "" && (

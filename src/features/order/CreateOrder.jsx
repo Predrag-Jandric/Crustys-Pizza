@@ -29,25 +29,32 @@ function CreateOrder() {
   if (!cart.length) return <EmptyCart />;
 
   return (
-    <div className="px-4 py-6">
+    <div className="mx-auto max-w-[40rem] px-4 mt-16">
       <h2 className="mb-8 text-xl font-semibold">Ready to order? Lets go!</h2>
 
       <Form method="POST">
         <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
-          <label className="sm:basis-40">First Name</label>
-          <input
-            className="input"
-            defaultValue={`${username} `}
-            type="text"
-            name="customer"
-            required
-          />
+          <label className="">First Name:</label>
+          <div className="flex grow justify-end">
+            <input
+              className="input w-full sm:w-[25rem]"
+              defaultValue={`${username} `}
+              type="text"
+              name="customer"
+              required
+            />
+          </div>
         </div>
 
         <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
-          <label className="sm:basis-40">Phone number</label>
-          <div className="grow">
-            <input className="input w-full" type="tel" name="phone" required />
+          <label className="">Phone number:</label>
+          <div className="flex grow justify-end">
+            <input
+              className="input w-full sm:w-[25rem]"
+              type="tel"
+              name="phone"
+              required
+            />
             {formErrors?.phone && (
               <p className="mt-2 rounded-md bg-alert1 p-2 text-xs text-alert3">
                 {formErrors.phone}
@@ -57,10 +64,10 @@ function CreateOrder() {
         </div>
 
         <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
-          <label className="sm:basis-40">Address</label>
-          <div className="grow">
+          <label className="">Address:</label>
+          <div className="flex grow justify-end">
             <input
-              className="input w-full"
+              className="input w-full sm:w-[25rem]"
               type="text"
               name="address"
               required

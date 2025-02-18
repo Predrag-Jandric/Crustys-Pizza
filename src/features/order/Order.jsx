@@ -4,6 +4,10 @@ import { useLoaderData } from "react-router-dom";
 import { getOrder } from "../../services/apiRestaurant";
 import { formatCurrency } from "../../utils/helpers";
 import OrderItem from "../order/OrderItem";
+import { FaRegCopy } from "react-icons/fa6";
+import { toast } from "react-toastify";
+import LinkButton from "../../ui/LinkButton";
+import Button from "../../ui/Button";
 
 function Order() {
   const order = useLoaderData();
@@ -11,10 +15,26 @@ function Order() {
   // Everyone can search for all orders, so for privacy reasons we're gonna gonna exclude names or address, these are only for the restaurant staff
   const { id, priority, priorityPrice, orderPrice, cart } = order;
 
+  const handleCopy = () => {
+    navigator.clipboard.writeText(id);
+    toast.success("Order ID copied", { autoClose: 1500 });
+  };
+
   return (
-    <div className="space-y-8 px-4 py-6">
+    <div className="mx-auto mt-16 max-w-[40rem] px-4">
       <div className="flex flex-wrap items-center justify-between gap-4">
-        <h2 className="text-xl font-semibold">Status # {id}</h2>
+        <h2 className="text-xl flex items-center font-semibold">
+          Status # {id}{" "}
+          <button
+            onClick={handleCopy}
+            className="inline-flex hover:bg-gray1 transition hover: ml-3 gap-2 rounded-full border border-gray4 px-3 py-1 text-sm"
+          >
+            <span>
+              <FaRegCopy className="inline-flex" />
+            </span>
+            Copy
+          </button>
+        </h2>
 
         <div className="space-x-2">
           {priority && (
@@ -25,13 +45,13 @@ function Order() {
         </div>
       </div>
 
-      <ul className="divide-y divide-gray2 border-b border-t">
+      <ul className="border-t border-gray2 mt-4 ">
         {cart.map((item, index) => (
           <OrderItem item={item} key={index} />
         ))}
       </ul>
 
-      <div className="space-y-23 bg-gray1 px-6 py-5">
+      <div className="space-y-23 mb-5 bg-gray1 px-6 py-5">
         <p className="text-sm font-medium text-gray5">
           Price pizza: {formatCurrency(orderPrice)}
         </p>
@@ -43,7 +63,11 @@ function Order() {
         <p className="font-bold">
           To pay on delivery: {formatCurrency(orderPrice + priorityPrice)}
         </p>
+     
       </div>
+      <LinkButton to={"/menu"}>
+        <Button type="primarySmall" >&larr; Back to menu</Button>
+      </LinkButton>
     </div>
   );
 }

@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import defaultImg from "../../assets/unknownPerson.jpg";
 
 const initialState = {
   username: "",
@@ -13,8 +12,7 @@ const userSlice = createSlice({
     createUser(state, action) {
       state.username =
         action.payload.charAt(0).toUpperCase() + action.payload.slice(1);
-        state.image = defaultImg
-        localStorage.setItem("user", JSON.stringify(state));
+      localStorage.setItem("user", JSON.stringify(state));
     },
     updateUser(state, action) {
       state.username = action.payload;
@@ -24,7 +22,7 @@ const userSlice = createSlice({
       state.image = action.payload;
       localStorage.setItem("user", JSON.stringify(state));
     },
-    removeUser(state){
+    removeUser(state) {
       state.username = "";
       state.image = ``;
       localStorage.removeItem("user");
@@ -42,5 +40,11 @@ const userSlice = createSlice({
 export const getUsername = (state) => state.user.username;
 export const getUserImage = (state) => state.user.image;
 
-export const { createUser, updateUser, updateUserImage, removeUser, loadUserFromLocalStorage } = userSlice.actions;
+export const {
+  createUser,
+  updateUser,
+  updateUserImage,
+  removeUser,
+  loadUserFromLocalStorage,
+} = userSlice.actions;
 export default userSlice.reducer;

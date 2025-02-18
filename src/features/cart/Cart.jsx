@@ -18,7 +18,7 @@ function Cart() {
   if (!cart.length) return <EmptyCart />;
 
   return (
-    <div className="mx-auto max-w-[40rem] px-4 py-10 pb-24">
+    <div className="mx-auto max-w-[40rem] px-4 mt-16">
       <LinkButton to={"/menu"}>
         <Button type="secondarySmall">&larr; Back to menu</Button>
       </LinkButton>

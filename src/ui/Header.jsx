@@ -1,9 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
 import SearchOrder from "../features/order/SearchOrder";
 import { useDispatch, useSelector } from "react-redux";
-import logo from "../assets/logo.png";
+
 import { useEffect, useState } from "react";
-import { imagesPeople } from "../utils/images";
+
 import {
   updateUser,
   updateUserImage,
@@ -57,7 +57,7 @@ function Header() {
 
   const handleSignOut = () => {
     dispatch(removeUser());
-    toast.success("User has been removed successfully!", { autoClose: 1500 });
+    toast.success("User removed successfully!", { autoClose: 1500 });
     closeModal();
     navigate("/");
   };
@@ -65,7 +65,7 @@ function Header() {
   return (
     <header className="flex h-[10vh] items-center justify-between border-b border-gray1 bg-primary px-2 uppercase">
       <Link
-        className="flex items-center gap-3 px-4 py-1 font-logo text-2xl tracking-widest transition-colors hover:bg-yellow-500"
+        className="flex items-center gap-3 px-4 py-1 font-logo text-2xl tracking-widest transition-all hover:pb-3"
         to="/"
       >
         Crusty&apos;s
@@ -79,11 +79,6 @@ function Header() {
           className="flex items-center gap-2 px-2 hover:cursor-pointer hover:bg-green-400"
         >
           <p className="hidden p-2 text-lg md:block">{user.username}</p>
-          <img
-            className="size-12 rounded-full"
-            src={user.image}
-            alt="missing"
-          />
         </div>
       )}
 
