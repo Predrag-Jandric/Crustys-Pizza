@@ -4,7 +4,7 @@ import LinkButton from "../../ui/LinkButton";
 function EmptyCart() {
   return (
     <div className="px-4 py-6 flex flex-col gap-6 items-center">
-      <p className="mt-7 text-lg font-semibold text-center">
+      <p className="mt-7 text-lg text-center">
         Your cart is still empty. Start adding some pizzas.
       </p>
 

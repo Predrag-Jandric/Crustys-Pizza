@@ -17,22 +17,25 @@ function InputUser() {
     navigate("/menu");
   }
 
+  function handleInputChange(e) {
+    const value = e.target.value;
+    if (value.length <= 8) {
+      setUsername(value.charAt(0).toUpperCase() + value.slice(1));
+    }
+  }
+
   return (
     <form onSubmit={handleSubmit}>
-      <p className="mb-4 text-lg text-white ">
-        Please start by telling us your name:
+      <p className="mb-4 px-5 text-lg text-white ">
+        Enter your first name and start ordering pizzas!
       </p>
 
       <input
         className="input mb-8 w-72"
         type="text"
-        placeholder="Your full name"
+        placeholder="(max 8 characters)"
         value={username}
-        onChange={(e) =>
-          setUsername(
-            e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1),
-          )
-        }
+        onChange={handleInputChange}
       />
 
       {username !== "" && (

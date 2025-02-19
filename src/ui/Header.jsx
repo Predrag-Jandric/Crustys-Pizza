@@ -1,102 +1,68 @@
 import { Link, useNavigate } from "react-router-dom";
 import SearchOrder from "../features/order/SearchOrder";
 import { useDispatch, useSelector } from "react-redux";
-
-import { useEffect, useState } from "react";
-
-import {
-  updateUser,
-  updateUserImage,
-  removeUser,
-} from "../features/user/userSlice";
-import useModal from "../utils/useModal";
-import Modal from "../utils/Modal";
+import Swal from "sweetalert2";
+import { removeUser } from "../features/user/userSlice";
 import { toast } from "react-toastify";
-import Button from "./Button";
+import logo from "../assets/logo.png";
+import { GiShoppingCart } from "react-icons/gi";
+import { getCart } from "../features/cart/cartSlice";
 
 function Header() {
+  const cart = useSelector(getCart);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((state) => state.user);
-  const { isOpen, openModal, closeModal, handleClickOutside } = useModal();
-  const [isEditing, setIsEditing] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(user.image);
-  const [username, setUsername] = useState(user.username);
-
-  useEffect(() => {
-    setUsername(user.username);
-    setSelectedImage(user.image);
-  }, [user.username, user.image]);
-
-  const handleEditToggle = () => {
-    setIsEditing(!isEditing);
-    openModal();
-  };
-
-  // const handleImageSelect = (image) => {
-  //   setSelectedImage(image);
-  // };
-
-  const handleSubmit = () => {
-    dispatch(updateUser(username));
-    dispatch(updateUserImage(selectedImage));
-    closeModal();
-  };
-
-  // const handleInputChange = (e) => {
-  //   const capitalizedValue =
-  //     e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1);
-  //   setUsername(capitalizedValue);
-  // };
-
-  // const handleKeyDown = (e) => {
-  //   if (e.key === "Enter") {
-  //     handleSubmit();
-  //   }
-  // };
 
   const handleSignOut = () => {
-    dispatch(removeUser());
-    toast.success("User removed successfully!", { autoClose: 1500 });
-    closeModal();
-    navigate("/");
+    Swal.fire({
+      title: "You will be signed out!",
+      text: "Are you sure?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, sign me out!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        dispatch(removeUser());
+        toast.success("User removed successfully!", { autoClose: 1500 });
+        navigate("/");
+      }
+    });
   };
 
   return (
-    <header className="flex h-[10vh] items-center justify-between border-b border-gray1 bg-primary px-2 uppercase">
+    <header className="flex h-[10vh] items-center justify-between border-b border-gray1 bg-primary uppercase">
       <Link
-        className="flex items-center gap-3 px-4 py-1 font-logo text-2xl tracking-widest transition-all hover:pb-3"
+        className="flex flex-shrink-0 items-center gap-3 px-4 py-1 tracking-widest transition-colors"
         to="/"
       >
-        Crusty&apos;s
+        <img className="h-14 w-14" src={logo} alt="logo" />
+        <span className="hidden font-loud text-2xl md:block">
+          Crusty&apos;s
+        </span>
       </Link>
 
       {user.username && <SearchOrder />}
 
       {user.username && (
-        <div
-          onClick={handleEditToggle}
-          className="flex items-center gap-2 px-2 hover:cursor-pointer hover:bg-green-400"
-        >
-          <p className="hidden p-2 text-lg md:block">{user.username}</p>
+        <div className="flex items-center px-2 hover:cursor-pointer">
+          <Link
+            className="relative flex items-center gap-2 font-semibold"
+            to="/cart"
+          >
+            {cart.length > 0 && (
+              <span className="absolute -top-2 left-2 flex size-[1.1rem] animate-bounce items-center justify-center rounded-full bg-red-400 text-sm text-black">
+                {cart.length}
+              </span>
+            )}
+            <GiShoppingCart className="size-7" />
+          </Link>
+          <button onClick={handleSignOut} className="p-2 text-lg">
+            {user.username}
+          </button>
         </div>
-      )}
-
-      {isOpen && (
-        <Modal
-          content={
-            <div className="flex flex-col">
-              <Button onClick={handleSubmit} type="primarySmall">
-                Update Profile
-              </Button>
-              <Button onClick={handleSignOut} type="secondarySmall">
-                Sign me out
-              </Button>
-            </div>
-          }
-          onClose={closeModal}
-          handleClickOutside={handleClickOutside}
-        />
       )}
     </header>
   );

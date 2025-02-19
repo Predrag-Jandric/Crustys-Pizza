@@ -21,13 +21,13 @@ function Order() {
   };
 
   return (
-    <div className="mx-auto mt-16 max-w-[40rem] px-4">
+    <div className="mx-auto my-12 max-w-[40rem] px-4">
       <div className="flex flex-wrap items-center justify-between gap-4">
-        <h2 className="text-xl flex items-center font-semibold">
-          Status # {id}{" "}
+        <h2 className="flex items-center text-xl font-semibold">
+          Status {id}{" "}
           <button
             onClick={handleCopy}
-            className="inline-flex hover:bg-gray1 transition hover: ml-3 gap-2 rounded-full border border-gray4 px-3 py-1 text-sm"
+            className="hover: ml-3 inline-flex gap-2 rounded-full border border-gray4 px-3 py-1 text-sm transition hover:bg-gray1"
           >
             <span>
               <FaRegCopy className="inline-flex" />
@@ -45,7 +45,7 @@ function Order() {
         </div>
       </div>
 
-      <ul className="border-t border-gray2 mt-4 ">
+      <ul className="mt-4 border-t border-gray2">
         {cart.map((item, index) => (
           <OrderItem item={item} key={index} />
         ))}
@@ -63,10 +63,9 @@ function Order() {
         <p className="font-bold">
           To pay on delivery: {formatCurrency(orderPrice + priorityPrice)}
         </p>
-     
       </div>
       <LinkButton to={"/menu"}>
-        <Button type="primarySmall" >&larr; Back to menu</Button>
+        <Button type="primarySmall">&larr; Back to menu</Button>
       </LinkButton>
     </div>
   );

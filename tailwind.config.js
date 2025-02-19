@@ -3,17 +3,14 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    fontFamily: {
-      sans: "Roboto Mono, monospace",
-    },
-
     extend: {
       fontFamily: {
-        logo: "Yellowtail",
+        loud: "Cormorant",
+        primary: "Open Sans",
       },
       colors: {
-        primary: "#4dccb7 ",
-        primaryHover: "#81DACB ",
+        primary: "#FED35D",
+        primaryHover: "#FEC834",
 
         secondary: "transparent",
         secondaryHover: "#CCCCCC",
@@ -30,7 +27,7 @@ export default {
         alert3: "#9a3412", // red 800
       },
       backgroundImage: {
-        'hero': "url('./src/assets/pizza.jpg')", // Path to your image
+        hero: "url('./src/assets/pizza.jpg')", // Path to your image
       },
     },
   },

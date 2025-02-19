@@ -2,17 +2,17 @@ import { Link } from "react-router-dom";
 
 function Button({ children, disabled, to, type, onClick }) {
   const base =
-    "inline-block rounded-full text-sm font-semibold uppercase tracking-wide text-stone-800 transition-colors disabled:cursor-not-allowed border-2";
+    "inline-block rounded-full text-sm font-medium capitalize tracking-wide text-stone-800 transition-colors disabled:cursor-not-allowed border-2";
 
   const styles = {
     primary: `${base} border-secondary bg-primary 
-      hover:bg-primaryHover px-5 py-3.5`,
+    hover:bg-primaryHover px-5 py-3.5`,
     primarySmall: `${base} border-secondary bg-primary 
-      hover:bg-primaryHover px-5 py-2 text-xs`,
+    hover:bg-primaryHover px-3 sm:px-5 py-1.5 sm:py-2 text-xs`,
     secondary: `${base} border-secondaryHover bg-secondary hover:bg-secondaryHover px-5 py-3`,
     secondarySmall: `${base} border-secondaryHover bg-secondary hover:bg-secondaryHover px-5 py-2 text-xs`,
     round: `${base} border-transparent bg-primary hover:bg-primaryHover
-        px-3 py-1.5 text-sm`,
+        size-8 sm:size-9 text-sm`,
   };
 
   if (to)
