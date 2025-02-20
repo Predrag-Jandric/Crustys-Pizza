@@ -8,23 +8,21 @@
 
 ## About Project 👋
 
-Welcome to React Pizza Shop! This app simulates a local pizza business where people can create an account **very easily** and order pizza to be delivered to their location.
-
-The primary goal of this project is to demonstrate the use of modern web development technologies to build a real-world application. It showcases how to create a responsive, user-friendly interface with React, manage state with Redux Toolkit, handle routing with React Router, and style components with Tailwind CSS. Additionally, it integrates with a backend API to fetch menu items and manage orders, providing a complete end-to-end solution.
+Welcome to React Pizza Shop! This app simulates a local pizza business where people can order pizza easily, to be delivered to their location.
 
 ---
 
 ## Features 👨‍💻
 
-- **User Login/Log out:** Users can login and log out, and the app will remember the user across sessions using **only** local storage and not database and backend.
-
 - **User Edit:** Users can update their name and profile image. The profile image can be selected from a predefined set of images.
 
-- **Menu Management:** Users can view a list of available pizzas with details and add or remove pizzas to or from their cart. Quantity of each pizza can be easily changed.
+- **Menu Management:** Users can view a list of available pizzas with details and add or remove pizzas to, or from their cart. Quantity of each pizza item can be easily changed.
 
-- **Cart Management:** Users can view details of the items in their cart, increase or decrease the quantity of each item, remove individual item or all items at once. A summary of the cart is displayed at the bottom of the screen on most of the pages, showing the total number of items and the total price.
+- **Cart Management:** Users can view details of the items in their cart, increase or decrease the quantity of each item, remove individual item or all items at once.
 
-- **Order Management:** Users can create a new order by providing their name, phone number, and address. They can also choose to give their order priority for an additional cost and view the details of their order. Users can also search and see an order by its ID to view its details
+- **Order Management:** Users can create a new order by providing their name, phone number, and address. They can also choose to give their order priority for an additional cost and view the details of their order. Users can also search and see an order by its ID to view its details.
+
+- **User Login/Log out:** Users can login and log out, and the app will remember the user across sessions using **only** local storage and not database and backend.
 
 ---
 
@@ -44,16 +42,16 @@ The primary goal of this project is to demonstrate the use of modern web develop
 
 - **React router:** For navigating different pages.
 
-- **Toast Notifications:** The app uses `react-toastify` to display toast notifications for various actions.
-
 dependencies:
 
 - "@reduxjs/toolkit": "^2.3.0",
 - "react": "^18.2.0",
 - "react-dom": "^18.2.0",
+- "react-hot-toast": "^2.5.2",
+- "react-icons": "^5.4.0",
 - "react-redux": "^9.1.2",
 - "react-router-dom": "^6.27.0",
-- "react-toastify": "^11.0.3"
+- "sweetalert2": "^11.17.2"
 
 devDependencies:
 
@@ -128,59 +126,58 @@ Ensure you have the following installed on your system:
 
 ## Project Structure 📂
 
-    shop/
-    ├── public
-    ├── src
-    │   ├── assets
-    │   │   ├── (all images)
-    │   ├── features
-    │   │   ├── cart
-    │   │   │   ├── Cart.jsx
-    │   │   │   ├── CartItem.jsx
-    │   │   │   ├── CartOverview.jsx
-    │   │   │   ├── cartSlice.js
-    │   │   │   ├── DeleteItem.jsx
-    │   │   │   ├── EmptyCart.jsx
-    │   │   │   ├── UpdateItemQuantity.jsx
-    │   │   ├── menu
-    │   │   │   ├── Menu.jsx
-    │   │   │   ├── MenuItem.jsx
-    │   │   ├── order
-    │   │   │   ├── CreateOrder.jsx
-    │   │   │   ├── Order.jsx
-    │   │   │   ├── OrderItem.jsx
-    │   │   │   ├── SearchOrder.jsx
-    │   │   ├── user
-    │   │   │   ├── InputUser.jsx
-    │   │   │   ├── userSlice.js
-    │   ├── services
-    │   │   ├── apiRestaurant.js
-    │   ├── ui
-    │   │   ├── AppLayout.jsx
-    │   │   ├── Button.jsx
-    │   │   ├── Error.jsx
-    │   │   ├── Header.jsx
-    │   │   ├── Home.jsx
-    │   │   ├── LinkButton.jsx
-    │   │   ├── Loader.jsx
-    │   ├── utils
-    │   │   ├── helpers.js
-    │   │   ├── images.js
-    │   │   ├── Modal.jsx
-    │   │   ├── useModal.jsx
-    │   ├── App.jsx
-    │   ├── index.css
-    │   ├── main.jsx
-    │   ├── store.js
-    ├── .eslintrc.cjs
-    ├── .gitignore
-    ├── .prettierrc
-    ├── index.html
-    ├── package.json
-    ├── postcss.config.js
-    ├── README.md
-    ├── tailwind.config.js
-    ├── vite.config.js
+├── public
+├── src
+│ ├── assets
+│ │ ├── (all images)
+│ ├── features
+│ │ ├── cart
+│ │ │ ├── Cart.jsx
+│ │ │ ├── CartItem.jsx
+│ │ │ ├── CartOverview.jsx
+│ │ │ ├── cartSlice.js
+│ │ │ ├── DeleteItem.jsx
+│ │ │ ├── EmptyCart.jsx
+│ │ │ ├── UpdateItemQuantity.jsx
+│ │ ├── menu
+│ │ │ ├── Menu.jsx
+│ │ │ ├── MenuItem.jsx
+│ │ ├── order
+│ │ │ ├── CreateOrder.jsx
+│ │ │ ├── Order.jsx
+│ │ │ ├── OrderItem.jsx
+│ │ │ ├── SearchOrder.jsx
+│ │ ├── user
+│ │ │ ├── InputUser.jsx
+│ │ │ ├── userSlice.js
+│ ├── services
+│ │ ├── apiRestaurant.js
+│ ├── ui
+│ │ ├── AppLayout.jsx
+│ │ ├── Button.jsx
+│ │ ├── Error.jsx
+│ │ ├── Header.jsx
+│ │ ├── Home.jsx
+│ │ ├── LinkButton.jsx
+│ │ ├── Loader.jsx
+│ ├── utils
+│ │ ├── helpers.js
+│ │ ├── Modal.jsx
+│ │ ├── useModal.jsx
+│ ├── App.jsx
+│ ├── index.css
+│ ├── main.jsx
+│ ├── store.js
+├── .eslintrc.cjs
+├── .gitignore
+├── .prettierrc
+├── index.html
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── README.md
+├── tailwind.config.js
+├── vite.config.js
 
 ---
 
@@ -188,15 +185,7 @@ Ensure you have the following installed on your system:
 
 ### `/src/assets/` folder
 
-- **Role:** This folder contains all the static assets used in the project, such as images.
-
-- **Contents:**
-
-  - Contains all the profile images that users can select.
-
-  - The logo of the application.
-
-  - The background image used in the `Home` component.
+- **Role:** This folder contains all the static assets used in the project, such as the logo of the application and background image used in the `Home` component.
 
 ### `/src/features/cart/` folder
 
@@ -207,8 +196,6 @@ Ensure you have the following installed on your system:
   - `Cart.jsx`: Displays the items in the user's cart and provides options to clear the cart or proceed to order.
 
   - `CartItem.jsx`: Represents a single item in the cart, showing its name, quantity, and total price.
-
-  - `CartOverview.jsx`: Displays a summary of the cart at the bottom of the screen, showing the total number of items and the total price.
 
   - `cartSlice.js`: Contains the Redux slice for managing the cart state, including actions for adding, removing, and updating items.
 
@@ -232,6 +219,7 @@ Ensure you have the following installed on your system:
 ### `/src/features/order/` folder
 
 - **Role:** This folder contains all the components and logic related to managing orders.
+
 - **Contents:**
 
   - `CreateOrder.jsx`: Provides a form for users to create a new order by entering their name, phone number, and address. Users can also choose to give their order priority.
@@ -248,17 +236,13 @@ Ensure you have the following installed on your system:
 
 - **Contents:**
 
-  - `InputUser.jsx`: Provides a form for users to enter their username when they first visit the site.
+  - `InputUser.jsx`: Provides a simple form for users to enter their first name when they first visit the site, on the Homepage.
 
   - `userSlice.js`: Contains the Redux slice for managing the user state, including actions for creating, updating, and removing the user.
 
 ### `/src/services/` folder
 
-- **Role:** This folder contains the API service functions used to interact with the backend.
-
-- **Contents:**
-
-  - `apiRestaurant.js`: Contains functions for fetching the menu, creating orders, and fetching order details.
+- **Role:** This folder contains the `apiRestaurant.js` API service functions used to interact with the backend such as, functions for fetching the menu, creating orders, and fetching order details.
 
 ### `/src/ui/` folder
 
@@ -274,7 +258,7 @@ Ensure you have the following installed on your system:
 
   - `Header.jsx`: Displays the header of the application, including the logo, search bar, and user profile.
 
-  - `Home.jsx`: The home page of the application, welcoming users and providing a link to the menu.
+  - `Home.jsx`: The home page of the application, welcoming users.
 
   - `LinkButton.jsx`: A reusable link button component.
 
@@ -282,17 +266,7 @@ Ensure you have the following installed on your system:
 
 ### `/src/utils/` folder
 
-- **Role:** This folder contains utility functions and components used throughout the application.
-
-- **Contents:**
-
-  - `helpers.js`: Contains helper functions, such as `formatCurrency` for formatting currency values.
-
-  - `images.js`: Contains the list of profile images and a function to get a random image.
-
-  - `Modal.jsx`: A reusable modal component for displaying content in a modal dialog.
-
-  - `useModal.jsx`: A custom hook for managing the state of the modal.
+- **Role:** This folder contains `helpers.js` which are utility functions.
 
 ### `/src/` folder
 

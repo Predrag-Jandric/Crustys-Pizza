@@ -5,7 +5,7 @@ import { getOrder } from "../../services/apiRestaurant";
 import { formatCurrency } from "../../utils/helpers";
 import OrderItem from "../order/OrderItem";
 import { FaRegCopy } from "react-icons/fa6";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 import LinkButton from "../../ui/LinkButton";
 import Button from "../../ui/Button";
 
@@ -17,14 +17,14 @@ function Order() {
 
   const handleCopy = () => {
     navigator.clipboard.writeText(id);
-    toast.success("Order ID copied", { autoClose: 1500 });
+    toast.success("Order ID copied");
   };
 
   return (
     <div className="mx-auto my-12 max-w-[40rem] px-4">
       <div className="flex flex-wrap items-center justify-between gap-4">
         <h2 className="flex items-center text-xl font-semibold">
-          Status {id}{" "}
+          Order number: {id}{" "}
           <button
             onClick={handleCopy}
             className="hover: ml-3 inline-flex gap-2 rounded-full border border-gray4 px-3 py-1 text-sm transition hover:bg-gray1"
@@ -38,7 +38,7 @@ function Order() {
 
         <div className="space-x-2">
           {priority && (
-            <span className="rounded-md bg-alert2 px-3 py-1 text-sm font-semibold uppercase tracking-wide text-white">
+            <span className="rounded-md bg-red-400 px-3 py-1 text-sm font-semibold uppercase tracking-wide text-white">
               Priority
             </span>
           )}

@@ -48,7 +48,7 @@ function CreateOrder() {
 
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
           <label className="">Phone number:</label>
-          <div className="flex grow justify-end">
+          <div className="flex flex-col grow justify-end items-end">
             <input
               className="input w-full sm:w-[25rem]"
               type="tel"
@@ -56,14 +56,14 @@ function CreateOrder() {
               required
             />
             {formErrors?.phone && (
-              <p className="mt-2 rounded-md bg-alert1 p-2 text-xs text-alert3">
+              <p className="mt-2 w-full sm:w-[25rem] rounded-md bg-alert1 p-2 text-xs text-alert3">
                 {formErrors.phone}
               </p>
             )}
           </div>
         </div>
 
-        <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
+        <div className="my-5 flex flex-col gap-2 sm:flex-row sm:items-center">
           <label className="">Address:</label>
           <div className="flex grow justify-end">
             <input

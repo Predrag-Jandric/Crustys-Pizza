@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Button({ children, disabled, to, type, onClick }) {
   const base =
-    "inline-block rounded-full text-sm font-medium capitalize tracking-wide text-stone-800 transition-colors disabled:cursor-not-allowed border-2";
+    "inline-block rounded-full sm:text-[0.9rem] text-sm font-medium capitalize tracking-wide text-stone-800 transition-colors disabled:cursor-not-allowed border-2";
 
   const styles = {
     primary: `${base} border-secondary bg-primary 

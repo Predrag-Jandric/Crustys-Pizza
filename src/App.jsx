@@ -8,7 +8,7 @@ import CreateOrder, {
 import Order, { loader as orderLoader } from "./features/order/Order";
 import AppLayout from "./ui/AppLayout";
 import Error from "./ui/Error";
-import { ToastContainer } from "react-toastify";
+import { Toaster } from "react-hot-toast";
 
 const router = createBrowserRouter([
   {
@@ -47,7 +47,7 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-      <ToastContainer />
+      <Toaster />
       <RouterProvider router={router} />
     </>
   );

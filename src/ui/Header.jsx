@@ -3,7 +3,7 @@ import SearchOrder from "../features/order/SearchOrder";
 import { useDispatch, useSelector } from "react-redux";
 import Swal from "sweetalert2";
 import { removeUser } from "../features/user/userSlice";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 import logo from "../assets/logo.png";
 import { GiShoppingCart } from "react-icons/gi";
 import { getCart } from "../features/cart/cartSlice";
@@ -26,7 +26,7 @@ function Header() {
     }).then((result) => {
       if (result.isConfirmed) {
         dispatch(removeUser());
-        toast.success("User removed successfully!", { autoClose: 1500 });
+        toast.success("User removed successfully!");
         navigate("/");
       }
     });
@@ -49,17 +49,20 @@ function Header() {
       {user.username && (
         <div className="flex items-center px-2 hover:cursor-pointer">
           <Link
-            className="relative flex items-center gap-2 font-semibold"
+            className="relative flex items-center gap-2 rounded-full  p-1 font-semibold transition hover:bg-primaryHover"
             to="/cart"
           >
             {cart.length > 0 && (
-              <span className="absolute -top-2 left-2 flex size-[1.1rem] animate-bounce items-center justify-center rounded-full bg-red-400 text-sm text-black">
+              <span className="absolute -top-1 left-2.5 flex size-[1.1rem] animate-bounce items-center justify-center rounded-full bg-red-400 text-sm text-black">
                 {cart.length}
               </span>
             )}
             <GiShoppingCart className="size-7" />
           </Link>
-          <button onClick={handleSignOut} className="p-2 text-lg">
+          <button
+            onClick={handleSignOut}
+            className="p-2 text-lg underline hover:no-underline"
+          >
             {user.username}
           </button>
         </div>
