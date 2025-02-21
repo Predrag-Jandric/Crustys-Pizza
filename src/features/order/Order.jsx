@@ -4,7 +4,7 @@ import { useLoaderData } from "react-router-dom";
 import { getOrder } from "../../services/apiRestaurant";
 import { formatCurrency } from "../../utils/helpers";
 import OrderItem from "../order/OrderItem";
-import { FaRegCopy } from "react-icons/fa6";
+import { FaRegCopy, FaArrowLeft } from "react-icons/fa6";
 import { toast } from "react-hot-toast";
 import LinkButton from "../../ui/LinkButton";
 import Button from "../../ui/Button";
@@ -65,7 +65,9 @@ function Order() {
         </p>
       </div>
       <LinkButton to={"/menu"}>
-        <Button type="primarySmall">&larr; Back to menu</Button>
+        <Button type="primary" icon={<FaArrowLeft />}>
+          Back to menu
+        </Button>
       </LinkButton>
     </div>
   );

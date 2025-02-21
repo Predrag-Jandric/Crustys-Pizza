@@ -4,7 +4,15 @@
 
 @layer components {
   .input {
-    @apply rounded-full border border-stone-200 px-4 py-3 text-sm transition-all placeholder:text-stone-400 focus:outline-none focus:ring focus:ring-primary focus:ring-opacity-50 
+    @apply rounded-full border border-stone-200 px-4 py-3 text-sm transition-all placeholder:text-stone-400 focus:outline-none focus:ring focus:ring-primary focus:ring-opacity-50;
+  }
+
+  .custom-confirm-button {
+    @apply rounded-full border-2 border-secondary bg-primary px-5 py-3.5 text-base font-medium text-stone-700 transition-all hover:bg-primaryHover;
+  }
+
+  .custom-cancel-button {
+    @apply border-alert rounded-full border-2 bg-gray7/10 px-5 py-3.5 text-base font-medium text-stone-700 transition-all hover:bg-gray7/20;
   }
 
   .loader {
@@ -18,7 +26,7 @@
     background-size: 20% 50%;
     animation: loading 1s infinite linear;
   }
-  
+
   @keyframes loading {
     20% {
       background-position:
@@ -48,4 +56,3 @@
 }
 
 /* https://dev.to/afif/i-made-100-css-loaders-for-your-next-project-4eje */
-

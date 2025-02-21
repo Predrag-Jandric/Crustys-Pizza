@@ -9,11 +9,11 @@ export default {
         primary: "Open Sans",
       },
       colors: {
-        primary: "#FED35D",
-        primaryHover: "#FEC834",
-
+        primary: "#FEC834",
+        primaryHover: "#FED35D",
+        
         secondary: "transparent",
-        secondaryHover: "#CCCCCC",
+        secondaryHover: "#E0E0E0",
         // gray0: "", // stone 100 facc15
         gray1: "#e7e5e4", // stone 200
         gray2: "#C5C1BE", // stone 300
@@ -22,9 +22,7 @@ export default {
         gray5: "#57534e", // stone 600
         // gray6: "#", // stone 700
         gray7: "#292524", // stone 800
-        alert1: "#fee2e2", // red 100
-        alert2: "#f97316", // red 500
-        alert3: "#9a3412", // red 800
+        alert: "#ff4545",
       },
       backgroundImage: {
         hero: "url('./src/assets/pizza.jpg')", // Path to your image

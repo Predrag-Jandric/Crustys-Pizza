@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { clearCart, getCart } from "./cartSlice";
 import { getUsername } from "../user/userSlice";
 import EmptyCart from "./EmptyCart";
+import { FaArrowLeft } from "react-icons/fa6";
 
 function Cart() {
   const username = useSelector(getUsername);
@@ -20,7 +21,11 @@ function Cart() {
   return (
     <div className="mx-auto my-12 h-full max-w-[40rem] px-4">
       <LinkButton to={"/menu"}>
-        <Button type="secondarySmall">&larr; Back to menu</Button>
+        {" "}
+        <Button type="secondarySmall" icon={<FaArrowLeft />}>
+          {" "}
+          Back to menu{" "}
+        </Button>{" "}
       </LinkButton>
 
       <h2 className="mt-7 text-xl font-semibold">Your cart, {username}</h2>

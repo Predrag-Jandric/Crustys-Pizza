@@ -1,5 +1,6 @@
 import Button from "../../ui/Button";
 import LinkButton from "../../ui/LinkButton";
+import { FaArrowLeft } from "react-icons/fa6";
 
 function EmptyCart() {
   return (
@@ -9,7 +10,11 @@ function EmptyCart() {
       </p>
 
       <LinkButton to={"/menu"}>
-        <Button type="primarySmall">&larr; Back to menu</Button>
+        {" "}
+        <Button type="primarySmall" icon={<FaArrowLeft />}>
+          {" "}
+          Back to menu{" "}
+        </Button>{" "}
       </LinkButton>
     </div>
   );

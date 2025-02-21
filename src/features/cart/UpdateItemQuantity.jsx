@@ -14,7 +14,7 @@ function UpdateItemQuantity({ pizzaId, currentQuantity }) {
   }
 
   return (
-    <div className="flex items-center gap-1.5 md:gap-3">
+    <div className="flex items-center gap-2 md:gap-3">
       <Button type="round" onClick={handleDecrease}>
         -
       </Button>

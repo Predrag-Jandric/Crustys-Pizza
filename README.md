@@ -1,20 +1,35 @@
-# React - Pizza Shop
+# React - Crusty's Pizza
 
-# 🔗 [Live Preview](/live link of project deployed on Netlify etc/)
+# 🔗 [Live Preview](https://crusty-pizza.netlify.app/)
 
-![Design preview](/path to image or gif of the project/)
-
----
-
-## About Project 👋
-
-Welcome to React Pizza Shop! This app simulates a local pizza business where people can order pizza easily, to be delivered to their location.
+![Design preview](./src/assets/prev1.png)
+![Design preview](./src/assets/prev2.png)
+![Design preview](./src/assets/prev3.png)
+![Design preview](./src/assets/prev4.png)
+![Design preview](./src/assets/prev5.png)
 
 ---
 
-## Features 👨‍💻
+## Table of Contents
 
-- **User Edit:** Users can update their name and profile image. The profile image can be selected from a predefined set of images.
+- [About Project](#about-project)
+- [Features](#features)
+- [How it works](#how-it-works)
+- [Technologies & Dependencies used](#technologies--dependencies-used)
+- [Prerequisites](#prerequisites)
+- [Clone & Run locally](#clone--run-locally)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+
+---
+
+## About Project
+
+Crusty's pizza simulates a local pizza business where people can order pizza online easily, to be delivered to their location. Users can choose from a variety of pizzas, add them to their cart, and input their details for delivery. The app also has a search feature to find orders quickly.
+
+---
+
+## Features
 
 - **Menu Management:** Users can view a list of available pizzas with details and add or remove pizzas to, or from their cart. Quantity of each pizza item can be easily changed.
 
@@ -26,162 +41,7 @@ Welcome to React Pizza Shop! This app simulates a local pizza business where peo
 
 ---
 
-## Technologies & Dependencies used 📦
-
-- **Vite:** For building the app (React + vanilla JavaScript).
-
-- **API Integration:** The app integrates with a backend API to fetch menu items and manage orders. The API requests are handled using asynchronous functions.
-
-- **Responsive Layout:** The app is designed to be responsive and works well on both desktop and mobile devices.
-
-- **React:** For pretty much everything.
-
-- **Tailwind:** For styling the app.
-
-- **Redux toolkit:** For global state management.
-
-- **React router:** For navigating different pages.
-
-dependencies:
-
-- "@reduxjs/toolkit": "^2.3.0",
-- "react": "^18.2.0",
-- "react-dom": "^18.2.0",
-- "react-hot-toast": "^2.5.2",
-- "react-icons": "^5.4.0",
-- "react-redux": "^9.1.2",
-- "react-router-dom": "^6.27.0",
-- "sweetalert2": "^11.17.2"
-
-devDependencies:
-
-- "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-- "@babel/plugin-transform-private-property-in-object": "^7.25.8",
-- "@types/react": "^18.2.15",
-- "@types/react-dom": "^18.2.7",
-- "@vitejs/plugin-react": "^4.0.3",
-- "autoprefixer": "^10.4.20",
-- "eslint": "^8.57.1",
-- "eslint-config-react-app": "^7.0.1",
-- "eslint-plugin-react": "^7.32.2",
-- "eslint-plugin-react-hooks": "^4.6.0",
-- "eslint-plugin-react-refresh": "^0.4.3",
-- "postcss": "^8.4.47",
-- "prettier": "^3.3.3",
-- "prettier-plugin-tailwindcss": "^0.6.8",
-- "tailwindcss": "^3.4.14",
-- "vite": "^4.4.5",
-- "vite-plugin-eslint": "^1.8.1"
-
----
-
-## Prerequisites 📚
-
-Ensure you have the following installed on your system:
-
-    Node.js v18.00.0
-    npm or yarn
-
----
-
-## Clone & Run locally 🏃‍♂️
-
-1. **Clone the Repository:**
-
-   - On the GitHub repo page, click the green "Code" button.
-
-   - Copy the HTTPS URL.
-
-2. **Open the Terminal:**
-
-   - Open the terminal by typing "cmd" in your desktop's start menu, **OR**
-
-   - Right-click on the desktop and select "Git Bash Here" (if you have Git Bash installed), **OR**
-
-   - Open Visual Studio Code's terminal by clicking "Terminal" -> "New Terminal" inside the editor.
-
-3. **Navigate to Your Project Location:**
-
-   - In the terminal, navigate to your desired location (e.g., desktop) using the command: `cd desktop`. Adjust the path if your project is located elsewhere.
-
-   - Ensure that your terminal's address is inside the project folder.
-
-4. **Clone the Repository:**
-
-   - Run the command: `git clone /link/`. Replace `/link/` with the HTTPS URL from step 1.
-
-5. **Enter the Project Directory:**
-
-   - Navigate into the cloned repository by typing: `cd /folder-name/`. Replace `/folder-name/` with the name of the cloned folder.
-
-6. **Install Dependencies:**
-
-   - Run the command: `npm install` to install all the necessary dependencies.
-
-7. **Start the Project:**
-
-   - Run the command: `npm run dev` or `yarn dev` to start the project. You will need to manually open the browser address at [localhost:5173/](http://localhost:5173/)
-
----
-
-## Project Structure 📂
-
-├── public
-├── src
-│ ├── assets
-│ │ ├── (all images)
-│ ├── features
-│ │ ├── cart
-│ │ │ ├── Cart.jsx
-│ │ │ ├── CartItem.jsx
-│ │ │ ├── CartOverview.jsx
-│ │ │ ├── cartSlice.js
-│ │ │ ├── DeleteItem.jsx
-│ │ │ ├── EmptyCart.jsx
-│ │ │ ├── UpdateItemQuantity.jsx
-│ │ ├── menu
-│ │ │ ├── Menu.jsx
-│ │ │ ├── MenuItem.jsx
-│ │ ├── order
-│ │ │ ├── CreateOrder.jsx
-│ │ │ ├── Order.jsx
-│ │ │ ├── OrderItem.jsx
-│ │ │ ├── SearchOrder.jsx
-│ │ ├── user
-│ │ │ ├── InputUser.jsx
-│ │ │ ├── userSlice.js
-│ ├── services
-│ │ ├── apiRestaurant.js
-│ ├── ui
-│ │ ├── AppLayout.jsx
-│ │ ├── Button.jsx
-│ │ ├── Error.jsx
-│ │ ├── Header.jsx
-│ │ ├── Home.jsx
-│ │ ├── LinkButton.jsx
-│ │ ├── Loader.jsx
-│ ├── utils
-│ │ ├── helpers.js
-│ │ ├── Modal.jsx
-│ │ ├── useModal.jsx
-│ ├── App.jsx
-│ ├── index.css
-│ ├── main.jsx
-│ ├── store.js
-├── .eslintrc.cjs
-├── .gitignore
-├── .prettierrc
-├── index.html
-├── package-lock.json
-├── package.json
-├── postcss.config.js
-├── README.md
-├── tailwind.config.js
-├── vite.config.js
-
----
-
-## How it works in detail ⚙️
+## How it works
 
 ### `/src/assets/` folder
 
@@ -283,6 +143,161 @@ Ensure you have the following installed on your system:
 
 ---
 
-## Contributing 💻
+## Technologies & Dependencies used
+
+- **Vite:** For building the app (React + vanilla JavaScript).
+
+- **API Integration:** The app integrates with a backend API to fetch menu items and manage orders. The API requests are handled using asynchronous functions.
+
+- **Responsive Layout:** The app is designed to be responsive and works well on both desktop and mobile devices.
+
+- **React:** For pretty much everything.
+
+- **Tailwind:** For styling the app.
+
+- **Redux toolkit:** For global state management.
+
+- **React router:** For navigating different pages.
+
+dependencies:
+
+- "@reduxjs/toolkit": "^2.3.0",
+- "react": "^18.2.0",
+- "react-dom": "^18.2.0",
+- "react-hot-toast": "^2.5.2",
+- "react-icons": "^5.4.0",
+- "react-redux": "^9.1.2",
+- "react-router-dom": "^6.27.0",
+- "sweetalert2": "^11.17.2"
+
+devDependencies:
+
+- "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+- "@babel/plugin-transform-private-property-in-object": "^7.25.8",
+- "@types/react": "^18.2.15",
+- "@types/react-dom": "^18.2.7",
+- "@vitejs/plugin-react": "^4.0.3",
+- "autoprefixer": "^10.4.20",
+- "eslint": "^8.57.1",
+- "eslint-config-react-app": "^7.0.1",
+- "eslint-plugin-react": "^7.32.2",
+- "eslint-plugin-react-hooks": "^4.6.0",
+- "eslint-plugin-react-refresh": "^0.4.3",
+- "postcss": "^8.4.47",
+- "prettier": "^3.3.3",
+- "prettier-plugin-tailwindcss": "^0.6.8",
+- "tailwindcss": "^3.4.14",
+- "vite": "^4.4.5",
+- "vite-plugin-eslint": "^1.8.1"
+
+---
+
+## Prerequisites
+
+Ensure you have the following installed on your system:
+
+    Node.js v18.00.0
+    npm or yarn
+
+---
+
+## Clone & Run locally
+
+1. **Clone the Repository:**
+
+   - On the GitHub repo page, click the green "Code" button.
+
+   - Copy the HTTPS URL.
+
+2. **Open the Terminal:**
+
+   - Open the terminal by typing "cmd" in your desktop's start menu, **OR**
+
+   - Right-click on the desktop and select "Git Bash Here" (if you have Git Bash installed), **OR**
+
+   - Open Visual Studio Code's terminal by clicking "Terminal" -> "New Terminal" inside the editor.
+
+3. **Navigate to Your Project Location:**
+
+   - In the terminal, navigate to your desired location (e.g., desktop) using the command: `cd desktop`. Adjust the path if your project is located elsewhere.
+
+   - Ensure that your terminal's address is inside the project folder.
+
+4. **Clone the Repository:**
+
+   - Run the command: `git clone /link/`. Replace `/link/` with the HTTPS URL from step 1.
+
+5. **Enter the Project Directory:**
+
+   - Navigate into the cloned repository by typing: `cd /folder-name/`. Replace `/folder-name/` with the name of the cloned folder.
+
+6. **Install Dependencies:**
+
+   - Run the command: `npm install` to install all the necessary dependencies.
+
+7. **Start the Project:**
+
+   - Run the command: `npm run dev` or `yarn dev` to start the project. You will need to manually open the browser address at [localhost:5173/](http://localhost:5173/)
+
+---
+
+## Project Structure
+
+├── public\
+├── src\
+│ ├── assets\
+│ │ ├── (all images)\
+│ ├── features\
+│ │ ├── cart\
+│ │ │ ├── Cart.jsx\
+│ │ │ ├── CartItem.jsx\
+│ │ │ ├── CartOverview.jsx\
+│ │ │ ├── cartSlice.js\
+│ │ │ ├── DeleteItem.jsx\
+│ │ │ ├── EmptyCart.jsx\
+│ │ │ ├── UpdateItemQuantity.jsx\
+│ │ ├── menu\
+│ │ │ ├── Menu.jsx\
+│ │ │ ├── MenuItem.jsx\
+│ │ ├── order\
+│ │ │ ├── CreateOrder.jsx\
+│ │ │ ├── Order.jsx\
+│ │ │ ├── OrderItem.jsx\
+│ │ │ ├── SearchOrder.jsx\
+│ │ ├── user\
+│ │ │ ├── InputUser.jsx\
+│ │ │ ├── userSlice.js\
+│ ├── services\
+│ │ ├── apiRestaurant.js\
+│ ├── ui\
+│ │ ├── AppLayout.jsx\
+│ │ ├── Button.jsx\
+│ │ ├── Error.jsx\
+│ │ ├── Header.jsx\
+│ │ ├── Home.jsx\
+│ │ ├── LinkButton.jsx\
+│ │ ├── Loader.jsx\
+│ ├── utils\
+│ │ ├── helpers.js\
+│ │ ├── Modal.jsx\
+│ │ ├── useModal.jsx\
+│ ├── App.jsx\
+│ ├── index.css\
+│ ├── main.jsx\
+│ ├── store.js\
+├── .eslintrc.cjs\
+├── .gitignore\
+├── .prettierrc\
+├── index.html\
+├── package-lock.json\
+├── package.json\
+├── postcss.config.js\
+├── README.md\
+├── tailwind.config.js\
+├── vite.config.js\
+
+---
+
+## Contributing
 
 Contributions are closed at the moment.

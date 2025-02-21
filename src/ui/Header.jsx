@@ -7,6 +7,7 @@ import { toast } from "react-hot-toast";
 import logo from "../assets/logo.png";
 import { GiShoppingCart } from "react-icons/gi";
 import { getCart } from "../features/cart/cartSlice";
+import "../index.css";
 
 function Header() {
   const cart = useSelector(getCart);
@@ -20,9 +21,11 @@ function Header() {
       text: "Are you sure?",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, sign me out!",
+      confirmButtonText: "Sign Out",
+      customClass: {
+        confirmButton: "custom-confirm-button",
+        cancelButton: "custom-cancel-button",
+      },
     }).then((result) => {
       if (result.isConfirmed) {
         dispatch(removeUser());
@@ -49,11 +52,11 @@ function Header() {
       {user.username && (
         <div className="flex items-center px-2 hover:cursor-pointer">
           <Link
-            className="relative flex items-center gap-2 rounded-full  p-1 font-semibold transition hover:bg-primaryHover"
+            className="relative flex items-center gap-2 rounded-full p-1 font-semibold transition hover:bg-primaryHover"
             to="/cart"
           >
             {cart.length > 0 && (
-              <span className="absolute -top-1 left-2.5 flex size-[1.1rem] animate-bounce items-center justify-center rounded-full bg-red-400 text-sm text-black">
+              <span className="bg-alert absolute -top-1 left-2.5 flex size-[1.1rem] animate-bounce items-center justify-center rounded-full text-sm text-black">
                 {cart.length}
               </span>
             )}
