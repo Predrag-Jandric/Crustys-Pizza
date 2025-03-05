@@ -48,7 +48,7 @@ function CreateOrder() {
 
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
           <label className="">Phone number:</label>
-          <div className="flex flex-col grow justify-end items-end">
+          <div className="flex grow flex-col items-end justify-end">
             <input
               className="input w-full sm:w-[25rem]"
               type="tel"
@@ -56,7 +56,7 @@ function CreateOrder() {
               required
             />
             {formErrors?.phone && (
-              <p className="mt-2 w-full sm:w-[25rem] rounded-md bg-alert1 p-2 text-xs text-alert3">
+              <p className="bg-alert1 text-alert3 mt-2 w-full rounded-md p-2 text-xs sm:w-[25rem]">
                 {formErrors.phone}
               </p>
             )}
@@ -85,7 +85,7 @@ function CreateOrder() {
             onChange={(e) => setWithPriority(e.target.checked)}
           />
           <label htmlFor="priority" className="font-medium">
-          Priority order ?
+            Make your order a priority ?
           </label>
         </div>
 

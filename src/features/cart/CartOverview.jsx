@@ -24,11 +24,11 @@ function CartOverview() {
       )}
 
       <Link
-        className="relative ml-auto flex items-center gap-2 rounded-full p-1 font-semibold transition"
+        className="relative ml-auto flex items-center gap-2 rounded-full p-1 font-semibold underline transition-all hover:no-underline"
         to="/cart"
       >
         {cart.length > 0 && (
-          <span className="bg-alert absolute -top-1 left-2.5 flex size-[1.1rem] animate-bounce items-center justify-center rounded-full text-sm text-black">
+          <span className="absolute -top-1 left-2.5 flex size-[1.1rem] animate-bounce items-center justify-center rounded-full bg-alert text-sm text-black">
             {cart.length}
           </span>
         )}

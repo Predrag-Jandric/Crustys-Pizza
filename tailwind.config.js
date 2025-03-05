@@ -11,7 +11,7 @@ export default {
       colors: {
         primary: "#FEC834",
         primaryHover: "#FED35D",
-        
+
         secondary: "transparent",
         secondaryHover: "#E0E0E0",
         // gray0: "", // stone 100 facc15
@@ -22,7 +22,7 @@ export default {
         gray5: "#57534e", // stone 600
         // gray6: "#", // stone 700
         gray7: "#292524", // stone 800
-        alert: "#ff4545",
+        alert: "#FE0040",
       },
       backgroundImage: {
         hero: "url('./src/assets/pizza.jpg')", // Path to your image
