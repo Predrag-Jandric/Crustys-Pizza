@@ -38,6 +38,8 @@ Crusty's pizza simulates a local pizza business where people can order pizza onl
 
 - **Order Management:** Users can create a new order by providing their name, phone number, and address. They can also choose to give their order priority for an additional cost and view the details of their order. Users can also search and see an order by its ID to view its details.
 
+- **Pagination** Available pizzas on the menu are displayed on a few pages, making navigation easier.
+
 - **User Login/Log out:** Users can login and log out, and the app will remember the user across sessions using **only** local storage and not database and backend.
 
 ---

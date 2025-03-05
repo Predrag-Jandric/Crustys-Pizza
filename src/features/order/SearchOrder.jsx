@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaArrowRight } from "react-icons/fa"; 
+import { FaArrowRight } from "react-icons/fa";
 
 function SearchOrder() {
   const [query, setQuery] = useState("");

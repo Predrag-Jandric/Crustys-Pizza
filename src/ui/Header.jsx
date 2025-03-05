@@ -42,7 +42,7 @@ function Header() {
         to="/"
       >
         <img className="h-14 w-14" src={logo} alt="logo" />
-        <span className="hidden font-loud text-2xl md:block">
+        <span className="hidden font-bold font-loud text-2xl text-black/70 md:block">
           Crusty&apos;s
         </span>
       </Link>
@@ -56,7 +56,7 @@ function Header() {
             to="/cart"
           >
             {cart.length > 0 && (
-              <span className="bg-alert absolute -top-1 left-2.5 flex size-[1.1rem] animate-bounce items-center justify-center rounded-full text-sm text-black">
+              <span className="absolute -top-1 left-2.5 flex size-[1.1rem] animate-bounce items-center justify-center rounded-full bg-alert text-sm text-black">
                 {cart.length}
               </span>
             )}
