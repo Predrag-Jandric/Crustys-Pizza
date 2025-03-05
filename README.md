@@ -1,6 +1,7 @@
 # React - Crusty's Pizza
 
 # 🔗 [Live Preview](https://crusty-pizza.netlify.app/)
+# ▶️ [Video walkthrough by dev](https://youtu.be/QE5tYT89XQc)
 
 ![Design preview](./src/assets/prev1.png)
 ![Design preview](./src/assets/prev2.png)
