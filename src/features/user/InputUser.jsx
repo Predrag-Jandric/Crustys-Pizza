@@ -19,27 +19,27 @@ function InputUser() {
 
   function handleInputChange(e) {
     const value = e.target.value;
-    if (value.length <= 8) {
+    if (value.length <= 15) {
       setUsername(value.charAt(0).toUpperCase() + value.slice(1));
     }
   }
 
   return (
     <form onSubmit={handleSubmit}>
-      <p className="mb-4 px-5 text-lg text-white ">
+      <p className="mb-4 px-5 text-lg text-white">
         Enter your first name and start ordering pizzas!
       </p>
 
       <input
-        className="input mb-8 w-72"
+        className="input xs:w-96 mt-4 w-5/6"
         type="text"
-        placeholder="(max 8 characters)"
+        placeholder="First name (max 15 characters)"
         value={username}
         onChange={handleInputChange}
       />
 
       {username !== "" && (
-        <div>
+        <div className="mt-6">
           <Button type="primary">Start ordering</Button>
         </div>
       )}

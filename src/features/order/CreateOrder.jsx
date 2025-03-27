@@ -8,6 +8,8 @@ import EmptyCart from "../cart/EmptyCart";
 import store from "../../store";
 import { formatCurrency } from "../../utils/helpers";
 import { useState } from "react";
+import { FaArrowLeft } from "react-icons/fa";
+import LinkButton from "../../ui/LinkButton";
 
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
@@ -30,7 +32,15 @@ function CreateOrder() {
 
   return (
     <div className="mx-auto my-12 max-w-[40rem] px-4">
-      <h2 className="mb-8 text-xl font-semibold">Ready to order? Lets go!</h2>
+      <LinkButton  to={"/cart"}>
+        {" "}
+        <Button type="secondarySmall" icon={<FaArrowLeft />}>
+          {" "}
+          Back to cart{" "}
+        </Button>{" "}
+      </LinkButton>
+
+      <h2 className="my-8 text-xl font-semibold">Ready to order? Lets go!</h2>
 
       <Form method="POST">
         <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
@@ -56,7 +66,7 @@ function CreateOrder() {
               required
             />
             {formErrors?.phone && (
-              <p className="bg-alert1 text-alert3 mt-2 w-full rounded-md p-2 text-xs sm:w-[25rem]">
+              <p className="bg-red-300 text-stone-600 mt-2 w-full font-semibold rounded-full p-2 text-xs sm:w-[25rem]">
                 {formErrors.phone}
               </p>
             )}
@@ -85,7 +95,7 @@ function CreateOrder() {
             onChange={(e) => setWithPriority(e.target.checked)}
           />
           <label htmlFor="priority" className="font-medium">
-            Make your order a priority ?
+            Make your order a priority ? ( +20% to the total price )
           </label>
         </div>
 

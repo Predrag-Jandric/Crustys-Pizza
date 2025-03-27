@@ -50,7 +50,7 @@ function Header() {
       {user.username && <SearchOrder />}
 
       {user.username && (
-        <div className="flex items-center px-2 hover:cursor-pointer">
+        <div className="flex items-center px-1.5 sm:px-3 hover:cursor-pointer">
           <Link
             className="relative flex items-center gap-2 rounded-full p-1 font-semibold transition hover:bg-primaryHover"
             to="/cart"
@@ -64,7 +64,7 @@ function Header() {
           </Link>
           <button
             onClick={handleSignOut}
-            className="p-2 text-lg underline hover:no-underline"
+            className="p-1 text-lg underline hover:no-underline"
           >
             {user.username}
           </button>

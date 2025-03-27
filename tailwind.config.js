@@ -27,7 +27,11 @@ export default {
       backgroundImage: {
         hero: "url('./src/assets/pizza.jpg')", // Path to your image
       },
+      screens: {
+        xs: "480px",
+      },
     },
+    
   },
   plugins: [],
 };
